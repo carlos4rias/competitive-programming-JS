@@ -8,21 +8,23 @@
 'use strict';
 
 const io = require('./lib/io')(main);
+const readline = io.readline;
+const print = io.print;
 
 function main() {
   let n = parseInt(io.readline());
   
   while ( n-- > 0 ) {
-    let line = io.readline().split(' ').map(data => parseInt(data));
+    let line = readline().split(' ').map(data => parseInt(data));
     solve(...line);
   }
 }
 
 function solve(n, m) {
-  const str = io.readline();
+  const str = readline();
   let freq = Array(n + 1).fill(0);
 
-  const mistakes = io.readline().split(' ').map(data => parseInt(data));
+  const mistakes = readline().split(' ').map(data => parseInt(data));
   mistakes.push(n);
 
   mistakes.forEach(x => {
@@ -36,5 +38,5 @@ function solve(n, m) {
     accumulated += freq[i];
     answer[str.charCodeAt(i) - 97] += accumulated;
   }
-  io.print(answer.join(' '));
+  print(answer.join(' '));
 }
