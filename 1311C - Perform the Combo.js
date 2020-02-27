@@ -1,10 +1,3 @@
-/*
-  Sending to Codeforces require delete the main's function declaration
-  preserving its content, also the io module must be deleted.
-  This is an solution example for problem:
-    https://codeforces.com/contest/1311/problem/C
-*/
-
 'use strict';
 
 const io = require('./lib/io')(main);
